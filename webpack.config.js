@@ -7,8 +7,8 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/public/',
     filename: 'bundle.js',
     chunkFilename: 'chunks/[name]/index.[chunkhash].js',
     devtoolModuleFilenameTemplate: 'source-webpack:///[resourcePath]',
@@ -17,6 +17,9 @@ module.exports = {
   devtool: '#source-map',
   devServer: {
     open: true,
+    inline: true,
+    contentBase: './',
+    watchContentBase: true,
     historyApiFallback: {
       index: 'index.html'
     }
@@ -51,6 +54,7 @@ module.exports = {
         use: [{
           loader: '@riotjs/webpack-loader',
           options: {
+            type: "es6",
             hot: true
           }
         }]
