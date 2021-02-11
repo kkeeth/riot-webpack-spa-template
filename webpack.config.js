@@ -7,8 +7,8 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'riot-webpack-spa-template'),
-    publicPath: '/riot-webpack-spa-template/',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/public/',
     filename: 'bundle.js',
     chunkFilename: 'chunks/[name]/index.[chunkhash].js',
     devtoolModuleFilenameTemplate: 'source-webpack:///[resourcePath]',
