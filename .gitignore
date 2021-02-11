@@ -55,7 +55,7 @@ npm-debug.log
 coverage
 generated
 /dist
-public/*.map
+riot-webpack-spa-template/*.map
 
 # these files are generated anyway
 .nycrc
