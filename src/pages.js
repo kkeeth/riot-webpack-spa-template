@@ -1,9 +1,12 @@
-export default [{
-  path: '/',
-  label: 'Home',
-  componentName: 'home'
-}, {
-  path: '/about',
-  label: 'About',
-  componentName: 'about'
-}]
+export default [
+  {
+    path: '/riot-webpack-spa-template',
+    label: 'Home',
+    componentName: 'home'
+  },
+  {
+    path: '/riot-webpack-spa-template/about',
+    label: 'About',
+    componentName: 'about'
+  }
+]

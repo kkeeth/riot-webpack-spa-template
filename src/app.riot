@@ -19,19 +19,24 @@
       <div if={!state.showNotFound} class="row">
         <div class="column column-60">
           <route each={page in state.pages} path={page.path}>
-            <main is={page.componentName}/>
+            <main is={page.componentName} />
           </route>
         </div>
         <!-- notice how <sidebar> is registered as global component -->
         <div class="column column-40">
-          <sidebar/>
+          <sidebar />
         </div>
       </div>
     </router>
   </div>
 
   <script>
-    import { Router, Route, route, toRegexp, match } from '@riotjs/route'
+    import {
+      route,
+      router,
+      toRegexp,
+      match
+    } from '@riotjs/route'
     import lazy from '@riotjs/lazy'
     import Loader from './components/includes/loader/loader.riot'
     import NotFound from './pages/not-found.riot'
@@ -39,8 +44,6 @@
 
     export default {
       components: {
-        Router,
-        Route,
         NotFound,
         Home: lazy(Loader, () => import(
           /* webpackPrefetch: true, webpackChunkName: 'pages/home' */
@@ -62,6 +65,8 @@
         this.anyRouteStream.on.value(this.onAnyRoute)
       },
       onAnyRoute(path) {
+        if (path.pathname === "/") router.push("/riot-webpack-spa-template")
+
         // show the not found page if none of the page paths are matched
         const activePage = pages.find(p => match(path.pathname, toRegexp(p.path)))
 
