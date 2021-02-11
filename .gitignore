@@ -55,9 +55,7 @@ npm-debug.log
 coverage
 generated
 /dist
-public/*.js
 public/*.map
-public/chunks/
 
 # these files are generated anyway
 .nycrc
